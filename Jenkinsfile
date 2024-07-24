@@ -15,7 +15,7 @@ pipeline{
 
         stage("Checkout from SCM"){
             steps{
-                git branch: 'main', credentialsId: 'github-pat', url: 'https://github.com/Fortube79/gitops-complete-production-e2e-pipeline'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/Fortube79/gitops-complete-production-e2e-pipeline'
             }
         }
 
@@ -37,7 +37,7 @@ pipeline{
                     git add deployment.yaml
                     git commit -m "Update Deployment Manifest"
                    """
-                withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'default')]){
+                withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'default')]){
                     sh "git push https://github.com/Fortube79/gitops-complete-production-e2e-pipeline main"
                 }     
             }
