@@ -1,11 +1,11 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  creationTimestamp: "2024-08-07T10:29:51Z"
+  creationTimestamp: "2024-08-07T11:38:28Z"
   name: complete-production-e2e-deployment
   namespace: default
-  resourceVersion: "407571"
-  uid: ba7f48cd-58e8-41ee-a4e5-376fea5eee75
+  resourceVersion: "408495"
+  uid: 79744fe4-1c15-41b5-ad65-a555b8046e1f
 spec:
   maxReplicas: 10
   metrics:
@@ -22,18 +22,18 @@ spec:
     name: complete-production-e2e-deployment
 status:
   conditions:
-  - lastTransitionTime: "2024-08-07T10:30:06Z"
+  - lastTransitionTime: "2024-08-07T11:38:39Z"
     message: recommended size matches current size
     reason: ReadyForNewScale
     status: "True"
     type: AbleToScale
-  - lastTransitionTime: "2024-08-07T10:49:12Z"
+  - lastTransitionTime: "2024-08-07T11:38:39Z"
     message: the HPA was able to successfully calculate a replica count from cpu resource
       utilization (percentage of request)
     reason: ValidMetricFound
     status: "True"
     type: ScalingActive
-  - lastTransitionTime: "2024-08-07T11:30:36Z"
+  - lastTransitionTime: "2024-08-07T11:38:39Z"
     message: the desired replica count is less than the minimum replica count
     reason: TooFewReplicas
     status: "True"
