@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: "2024-08-07T13:10:25Z"
   name: complete-production-e2e-deployment
   namespace: default
-  resourceVersion: "420898"
+  resourceVersion: "421853"
   uid: 322867a1-6a41-4dec-beb4-1b493964766d
 spec:
   maxReplicas: 10
@@ -23,9 +23,8 @@ spec:
 status:
   conditions:
   - lastTransitionTime: "2024-08-07T13:10:40Z"
-    message: recent recommendations were higher than current one, applying the highest
-      recent recommendation
-    reason: ScaleDownStabilized
+    message: recommended size matches current size
+    reason: ReadyForNewScale
     status: "True"
     type: AbleToScale
   - lastTransitionTime: "2024-08-07T13:10:40Z"
@@ -34,16 +33,16 @@ status:
     reason: ValidMetricFound
     status: "True"
     type: ScalingActive
-  - lastTransitionTime: "2024-08-07T13:10:40Z"
-    message: the desired count is within the acceptable range
-    reason: DesiredWithinRange
-    status: "False"
+  - lastTransitionTime: "2024-08-07T13:15:42Z"
+    message: the desired replica count is less than the minimum replica count
+    reason: TooFewReplicas
+    status: "True"
     type: ScalingLimited
   currentMetrics:
   - resource:
       current:
         averageUtilization: 0
-        averageValue: 2m
+        averageValue: 3m
       name: cpu
     type: Resource
   currentReplicas: 1
