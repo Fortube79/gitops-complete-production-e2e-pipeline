@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: "2024-08-07T10:29:51Z"
   name: complete-production-e2e-deployment
   namespace: default
-  resourceVersion: "401046"
+  resourceVersion: "407571"
   uid: ba7f48cd-58e8-41ee-a4e5-376fea5eee75
 spec:
   maxReplicas: 10
@@ -23,21 +23,20 @@ spec:
 status:
   conditions:
   - lastTransitionTime: "2024-08-07T10:30:06Z"
-    message: recent recommendations were higher than current one, applying the highest
-      recent recommendation
-    reason: ScaleDownStabilized
+    message: recommended size matches current size
+    reason: ReadyForNewScale
     status: "True"
     type: AbleToScale
-  - lastTransitionTime: "2024-08-07T10:30:06Z"
+  - lastTransitionTime: "2024-08-07T10:49:12Z"
     message: the HPA was able to successfully calculate a replica count from cpu resource
       utilization (percentage of request)
     reason: ValidMetricFound
     status: "True"
     type: ScalingActive
-  - lastTransitionTime: "2024-08-07T10:37:21Z"
-    message: the desired count is within the acceptable range
-    reason: DesiredWithinRange
-    status: "False"
+  - lastTransitionTime: "2024-08-07T11:30:36Z"
+    message: the desired replica count is less than the minimum replica count
+    reason: TooFewReplicas
+    status: "True"
     type: ScalingLimited
   currentMetrics:
   - resource:
