@@ -42,7 +42,7 @@ status:
   - resource:
       current:
         averageUtilization: 0
-        averageValue: 3m
+        averageValue: 2m
       name: cpu
     type: Resource
   currentReplicas: 1
