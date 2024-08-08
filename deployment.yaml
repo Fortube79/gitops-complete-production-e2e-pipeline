@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: complete-production-e2e-app
-          image: fortube/complete-prodcution-e2e-pipeline:1.0.0-43
+          image: fortube/complete-prodcution-e2e-pipeline:1.0.0-44
           resources:
             limits:
               memory: "256Mi"
